@@ -1,5 +1,5 @@
 // TODO: Create Firebase Auth Functions
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
 
@@ -15,4 +15,8 @@ export const handleLogin = ( email, password ) => {
         const errorMessage = error.message;
         console.log(errorMessage)
     });
+}
+
+export const handleRegester = (email, password ) => {
+    return createUserWithEmailAndPassword(auth, email, password)
 }
